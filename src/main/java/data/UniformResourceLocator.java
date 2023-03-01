@@ -8,7 +8,7 @@ public class UniformResourceLocator {
     public static final String BASE_URL = "https://stellarburgers.nomoreparties.site/";
     public static final String CREATE_NEW_USER_URL = "api/auth/register";
     public static final String LOGIN_USER_URL = "api/auth/login";
-    public static final String ERROR_PASSWORD_MESSAGE = "Некорректный пароль";
+    public static final String WRONG_PASSWORD_MESSAGE = "Некорректный пароль";
     public static final String USER_DATA_URL = "api/auth/user";
     public static final String YANDEX = "yandex";
     public static final String CHROME_MANAGER = "chromeWebDriverManager";

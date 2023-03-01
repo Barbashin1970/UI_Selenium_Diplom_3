@@ -41,8 +41,17 @@ public class UserSteps {
     }
 
     @Step("Удаляем профиль пользователя по его токену")
-    public ValidatableResponse deleteUser(String accessToken) {
+    public ValidatableResponse deleteUserOld(String accessToken) {
         return given().log().all()
+                .spec(getSpec())
+                .auth().oauth2(accessToken)
+                .when()
+                .delete(USER_DATA_URL)
+                .then();
+    }
+    @Step("Удаляем профиль пользователя по его токену")
+    public void deleteUser(String accessToken) {
+        given().log().all()
                 .spec(getSpec())
                 .auth().oauth2(accessToken)
                 .when()

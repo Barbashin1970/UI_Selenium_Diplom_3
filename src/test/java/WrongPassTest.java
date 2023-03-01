@@ -58,8 +58,8 @@ public class WrongPassTest {
                 .enterRegisterEmail(user.getEmail())
                 .enterRegisterPassword(" ")
                 .clickRegistrationButton();
-        Assert.assertEquals("Сообщение об ошибке в пароле не появилось",
-                "Некорректный пароль",
+        Assert.assertEquals("Сообщение о неверном пароле не появилось",
+                WRONG_PASSWORD_MESSAGE,
                 driver.findElement(RegistrationPage.registerWrongPasswordMessage).getText());
     }
 
