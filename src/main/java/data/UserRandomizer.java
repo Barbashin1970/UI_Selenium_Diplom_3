@@ -8,7 +8,7 @@ public class UserRandomizer {
     }
 
     public static User getNewRandomUser() {
-        return new User(RandomStringUtils.randomAlphanumeric(8),
+        return new User(RandomStringUtils.randomAlphanumeric(6),
                 RandomStringUtils.randomAlphanumeric(8) + "@burger.ru",
                 RandomStringUtils.randomAlphanumeric(6)); // граничное значение для позитивного теста
     }

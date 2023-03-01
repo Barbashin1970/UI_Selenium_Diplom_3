@@ -1,10 +1,8 @@
 package data;
 
 import io.qameta.allure.Step;
-import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 import pojo.Authorization;
@@ -33,6 +31,7 @@ public class UserSteps {
                 .post(CREATE_NEW_USER_URL)
                 .then();
     }
+
     @Step("Авторизация пользователя по e-mail и паролю")
     public ValidatableResponse loginUser(Authorization authorization) {
         return given().log().all()
