@@ -1,2 +1,1 @@
-# Diplom_3
-# Diplom_3
+# Diplom_3 Oleg Barbashin QA Java 15
