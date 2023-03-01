@@ -20,10 +20,10 @@ public class LogoutTest extends Autostart {
     @DisplayName("Проверка выхода из профиля по кнопке - Выход - слева в личном кабинете пользователя")
     @Description("Проверяем что после выхода из профиля отображается страница авторизации - Вход")
     public void logoutSuccess() {
-        MainPage mainPage = new MainPage(this.driver);
+        MainPage mainPage = new MainPage(driver);
         mainPage.openMainPage()
                 .clickAccountButton()
-                .authorizationFromLoginPage(this.user.getEmail(), this.user.getPassword())
+                .authorizationFromLoginPage(user.getEmail(), user.getPassword())
                 .clickLoginEnterButton()
                 .clickProfileButtonFromAuthorizedUser()
                 .clickLogOutButton();

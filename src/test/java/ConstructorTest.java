@@ -13,6 +13,8 @@ import pageobject.MainPage;
 
 import java.time.Duration;
 
+import static data.UniformResourceLocator.*;
+
 public class ConstructorTest {
     private WebDriver driver;
     private MainPage mainPage;
@@ -21,7 +23,7 @@ public class ConstructorTest {
     @Before
     @Step("Запускаем браузер и создаем Главную страницу")
     public void setUp() {
-        driver = ChangeBrowser.getBrowser("chrome");
+        driver = ChangeBrowser.getBrowser(CHROME);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         mainPage = new MainPage(driver);

@@ -20,6 +20,8 @@ import pojo.User;
 
 import java.time.Duration;
 
+import static data.UniformResourceLocator.*;
+
 public class RegistrationTest {
     private WebDriver driver;
     private User user;
@@ -27,7 +29,7 @@ public class RegistrationTest {
     @Before
     @Step("Запускаем браузер и готовим рандомные данные для регистрации аккаунта")
     public void setUp() {
-        driver = ChangeBrowser.getBrowser("chrome");
+        driver = ChangeBrowser.getBrowser(CHROME);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         user = UserRandomizer.getNewRandomUser();

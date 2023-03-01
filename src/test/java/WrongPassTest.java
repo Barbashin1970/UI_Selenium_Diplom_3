@@ -15,6 +15,8 @@ import pojo.User;
 
 import java.time.Duration;
 
+import static data.UniformResourceLocator.*;
+
 public class WrongPassTest {
     private WebDriver driver;
     private User user;
@@ -22,7 +24,7 @@ public class WrongPassTest {
     @Before
     @Step("Подготовка к тестам - запускаем браузер")
     public void setUp() {
-        driver = ChangeBrowser.getBrowser("chrome");
+        driver = ChangeBrowser.getBrowser(CHROME);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }

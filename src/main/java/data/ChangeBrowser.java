@@ -6,8 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class ChangeBrowser {
-    public ChangeBrowser() {
-    }
 
     public static WebDriver getBrowser(String browserName) {
         switch (browserName) {
@@ -16,8 +14,10 @@ public class ChangeBrowser {
                 ChromeOptions options = new ChromeOptions();
                 options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
                 return new ChromeDriver(options);
-            case "chrome":
+            case "chromeWebDriverManager":
                 WebDriverManager.chromedriver().setup();
+                return new ChromeDriver();
+            case "chromeNoManager":
                 return new ChromeDriver();
             default:
                 throw new RuntimeException("Только Хром и Яндекс!");

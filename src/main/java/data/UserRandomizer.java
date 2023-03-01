@@ -4,8 +4,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 import pojo.User;
 
 public class UserRandomizer {
-    public UserRandomizer() {
-    }
 
     public static User getNewRandomUser() {
         return new User(RandomStringUtils.randomAlphanumeric(6),

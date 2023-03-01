@@ -12,8 +12,6 @@ import static data.UniformResourceLocator.*;
 import static io.restassured.RestAssured.given;
 
 public class UserSteps {
-    public UserSteps() {
-    }
 
     public RequestSpecification getSpec() {
         return new RequestSpecBuilder()

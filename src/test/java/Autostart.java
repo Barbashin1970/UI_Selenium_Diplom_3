@@ -10,6 +10,8 @@ import pojo.User;
 
 import java.time.Duration;
 
+import static data.UniformResourceLocator.*;
+
 public class Autostart {
     User user;
     String accessToken;
@@ -19,7 +21,7 @@ public class Autostart {
     @Before
     @Step("Шаг запуска браузера и создания профиля пользователя с токеном доступа")
     public void setUp() {
-        driver = ChangeBrowser.getBrowser("chrome");
+        driver = ChangeBrowser.getBrowser(CHROME);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         user = UserRandomizer.getNewRandomUser();
