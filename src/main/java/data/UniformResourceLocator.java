@@ -11,7 +11,7 @@ public class UniformResourceLocator {
     public static final String WRONG_PASSWORD_MESSAGE = "Некорректный пароль";
     public static final String USER_DATA_URL = "api/auth/user";
     public static final String YANDEX = "yandex";
-    public static final String CHROME_MANAGER = "chromeWebDriverManager";
+    public static final String CHROME_WDM = "chromeWebDriverManager";
 
     public static final String CHROME = "chromeNoManager";
 

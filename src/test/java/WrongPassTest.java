@@ -25,6 +25,8 @@ public class WrongPassTest {
     @Step("Подготовка к тестам - запускаем браузер")
     public void setUp() {
         driver = ChangeBrowser.getBrowser(CHROME);
+        // driver = ChangeBrowser.getBrowser(CHROME_WDM); // chrome с зависимостью WebDriverManager
+        // driver = ChangeBrowser.getBrowser(YANDEX); // проверен запуск Яндекс Браузера
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }

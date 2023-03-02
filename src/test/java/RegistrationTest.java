@@ -29,7 +29,8 @@ public class RegistrationTest {
     @Before
     @Step("Запускаем браузер и готовим рандомные данные для регистрации аккаунта")
     public void setUp() {
-        //driver = ChangeBrowser.getBrowser(YANDEX); // проверен запуск Яндекс Браузера
+        // driver = ChangeBrowser.getBrowser(YANDEX); // проверен запуск Яндекс Браузера
+        // driver = ChangeBrowser.getBrowser(CHROME_WDM); // chrome с зависимостью WebDriverManager
         driver = ChangeBrowser.getBrowser(CHROME);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
