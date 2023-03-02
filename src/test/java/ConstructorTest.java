@@ -25,7 +25,7 @@ public class ConstructorTest {
     public void setUp() {
         driver = ChangeBrowser.getBrowser(CHROME);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         mainPage = new MainPage(driver);
     }
 
@@ -48,6 +48,7 @@ public class ConstructorTest {
         mainPage.openMainPage()
                 .clickMenuSauce()
                 .clickMenuBun();
+
         Assert.assertEquals("Булки", mainPage.getTextFromSelectedMenu());
     }
 
