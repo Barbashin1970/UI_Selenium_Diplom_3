@@ -1,22 +1,13 @@
 import data.ChangeBrowser;
 import data.UserRandomizer;
 import data.UserSteps;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.ValidatableResponse;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import pageobject.AuthorizationPage;
-import pageobject.MainPage;
-import pageobject.RegistrationPage;
-import pojo.Authorization;
-import pojo.User;
+import pageobject.*;
+import pojo.*;
 
 import java.time.Duration;
 
@@ -49,7 +40,7 @@ public class RegistrationTest {
                 .authorizationFromLoginPage(user.getEmail(), user.getPassword())
                 .clickLoginEnterButton();
         MainPage mainPage = new MainPage(driver);
-        Assert.assertTrue(mainPage.isMainPageOpen());
+        Assert.assertTrue("Создать заказ - не отображается", mainPage.isMainPageOpen());
     }
 
     @Test
@@ -65,7 +56,7 @@ public class RegistrationTest {
                 .authorizationFromLoginPage(user.getEmail(), user.getPassword())
                 .clickLoginEnterButton();
         MainPage mainPage = new MainPage(driver);
-        Assert.assertTrue(mainPage.isMainPageOpen());
+        Assert.assertTrue("Создать заказ - не отображается", mainPage.isMainPageOpen());
     }
 
     @Test
@@ -81,7 +72,7 @@ public class RegistrationTest {
                 .clickRegistrationButton()
                 .authorizationFromLoginPage(user.getEmail(), user.getPassword())
                 .clickLoginEnterButton();
-        Assert.assertTrue(mainPage.isMainPageOpen());
+        Assert.assertTrue("Создать заказ - не отображается", mainPage.isMainPageOpen());
     }
 
     @After

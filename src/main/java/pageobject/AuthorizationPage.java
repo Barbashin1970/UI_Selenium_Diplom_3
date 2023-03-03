@@ -12,6 +12,8 @@ import java.time.Duration;
 import static data.UniformResourceLocator.LOGIN_PAGE_URL;
 
 public class AuthorizationPage {
+
+    private static final By loginIndicator = By.xpath(".//*[text()='Вход']");
     private static final By loginEnterButton = By.xpath(".//*[text()='Войти']");
     private static final By loginEmail = By.xpath(".//label[text() = 'Email']/../input[contains(@name, 'name')]");
     private static final By loginPassword = By.xpath(".//label[text() = 'Пароль']/../input[contains(@type, 'password')]");
@@ -21,6 +23,11 @@ public class AuthorizationPage {
 
     public AuthorizationPage(WebDriver driver) {
         this.driver = driver;
+    }
+
+    @Step("Открываем страницу авторизации - Вход")
+    public boolean isLoginIndicatorDispayed() {
+        return driver.findElement(loginIndicator).isDisplayed();
     }
 
     @Step("Открываем страницу авторизации - Вход")

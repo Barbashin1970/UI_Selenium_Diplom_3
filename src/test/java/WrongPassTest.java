@@ -1,17 +1,10 @@
-import data.ChangeBrowser;
-import data.UserRandomizer;
-import io.qameta.allure.Description;
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Step;
+import data.*;
+import io.qameta.allure.*;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
-import pageobject.RegistrationPage;
 import pojo.User;
+import pageobject.*;
 
 import java.time.Duration;
 

@@ -12,6 +12,7 @@ public class MainPage {
     private static final By menuFillings = By.xpath(".//span[text()='Начинки']");
     private static final By currentMenu = By.xpath("//div[contains(@class,'tab_tab__1SPyG tab_tab_type_current__2BEPc')]");
     private static final By makeOrderButton = By.xpath(".//button[text()='Оформить заказ']");
+    private static final By setBurgerIndicator = By.xpath(".//*[text()='Соберите бургер']");
     private static final By menuSauce = By.xpath(".//span[text()='Соусы']");
     private static final By enterAccountButtonMain = By.xpath("//button[text()='Войти в аккаунт']");
     private final WebDriver driver;
@@ -47,6 +48,10 @@ public class MainPage {
     @Step("Проверяем отображается ли кнопка - Оформить заказ - главная страница")
     public boolean isMainPageOpen() {
         return driver.findElement(makeOrderButton).isDisplayed();
+    }
+    @Step("Проверяем отображается ли кнопка - Оформить заказ - главная страница")
+    public boolean isBurgerIndicatorDisplayed() {
+        return driver.findElement(setBurgerIndicator).isDisplayed();
     }
 
     @Step("Нажать на закладку - Булки")

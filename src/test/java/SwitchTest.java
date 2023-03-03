@@ -4,14 +4,8 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import pageobject.AuthorizationPage;
 import pageobject.MainPage;
-
-import java.time.Duration;
-
-import static data.UniformResourceLocator.BASE_URL;
-import static data.UniformResourceLocator.LOGIN_PAGE_URL;
 
 public class SwitchTest extends Autostart {
 
@@ -21,11 +15,10 @@ public class SwitchTest extends Autostart {
     @Description("Проверяем что без авторизации - попадаем на страницу авторизации - Вход")
     public void clickOnProfileByUnauthorizedUserGoToLoginPage() {
         MainPage mainPage = new MainPage(driver);
+        AuthorizationPage authorizationPage = new AuthorizationPage(driver);
         mainPage.openMainPage();
         mainPage.clickProfileButton();
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.urlToBe(LOGIN_PAGE_URL));
-        Assert.assertEquals(LOGIN_PAGE_URL, driver.getCurrentUrl());
+        Assert.assertTrue("Вход - не отображается", authorizationPage.isLoginIndicatorDispayed()); // добавил поверку отображения индикатра страницы
     }
 
     @Test
@@ -40,9 +33,7 @@ public class SwitchTest extends Autostart {
                 .clickLoginEnterButton()
                 .clickProfileButtonFromAuthorizedUser()
                 .clickConstructorButton();
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.urlToBe(BASE_URL));
-        Assert.assertEquals(BASE_URL, driver.getCurrentUrl());
+        Assert.assertTrue("Собери бургер - не отображается", mainPage.isBurgerIndicatorDisplayed()); // добавил поверку отображения индикатра страницы
     }
 
     @Test
@@ -57,9 +48,8 @@ public class SwitchTest extends Autostart {
                 .clickLoginEnterButton()
                 .clickProfileButtonFromAuthorizedUser()
                 .clickOnLogo();
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.urlToBe(BASE_URL));
-        Assert.assertEquals(BASE_URL, driver.getCurrentUrl());
+        Assert.assertTrue("Собери бургер - не отображается", mainPage.isBurgerIndicatorDisplayed()); // добавил поверку отображения индикатра страницы
+
     }
 }
 

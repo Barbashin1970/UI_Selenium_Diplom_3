@@ -4,13 +4,9 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import pageobject.AuthorizationPage;
 import pageobject.MainPage;
 
-import java.time.Duration;
-
-import static data.UniformResourceLocator.LOGIN_PAGE_URL;
 
 public class LogoutTest extends Autostart {
 
@@ -27,8 +23,7 @@ public class LogoutTest extends Autostart {
                 .clickLoginEnterButton()
                 .clickProfileButtonFromAuthorizedUser()
                 .clickLogOutButton();
-        new WebDriverWait(driver, Duration.ofSeconds(15))
-                .until(ExpectedConditions.urlToBe(LOGIN_PAGE_URL));
-        Assert.assertEquals(LOGIN_PAGE_URL, driver.getCurrentUrl());
+        AuthorizationPage authorizationPage = new AuthorizationPage(driver);
+        Assert.assertTrue("Вход - не отображается", authorizationPage.isLoginIndicatorDispayed()); // добавил поверку отображения индикатра страницы
     }
 }

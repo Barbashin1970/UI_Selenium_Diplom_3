@@ -20,7 +20,7 @@ public class LoginTest extends Autostart {
                 .clickAccountButton()
                 .authorizationFromLoginPage(user.getEmail(), user.getPassword())
                 .clickLoginEnterButton();
-        Assert.assertTrue(mainPage.isMainPageOpen());
+        Assert.assertTrue("Создать заказ - не отображается", mainPage.isMainPageOpen());
     }
 
     @Test
@@ -33,7 +33,7 @@ public class LoginTest extends Autostart {
                 .clickProfileButton()
                 .authorizationFromLoginPage(user.getEmail(), user.getPassword())
                 .clickLoginEnterButton();
-        Assert.assertTrue(mainPage.isMainPageOpen());
+        Assert.assertTrue("Создать заказ - не отображается", mainPage.isMainPageOpen());
     }
 
     @Test
@@ -47,7 +47,7 @@ public class LoginTest extends Autostart {
                 .authorizationFromLoginPage(user.getEmail(), user.getPassword())
                 .clickLoginEnterButton();
         MainPage mainPage = new MainPage(driver);
-        Assert.assertTrue(mainPage.isMainPageOpen());
+        Assert.assertTrue("Создать заказ - не отображается", mainPage.isMainPageOpen());
     }
 
     @Test
@@ -61,6 +61,6 @@ public class LoginTest extends Autostart {
                 .authorizationFromLoginPage(user.getEmail(), user.getPassword())
                 .clickLoginEnterButton();
         MainPage mainPage = new MainPage(driver);
-        Assert.assertTrue(mainPage.isMainPageOpen());
+        Assert.assertTrue("Создать заказ - не отображается", mainPage.isMainPageOpen());
     }
 }

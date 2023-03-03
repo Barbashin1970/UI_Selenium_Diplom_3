@@ -50,7 +50,6 @@ public class ConstructorTest {
         mainPage.openMainPage()
                 .clickMenuSauce()
                 .clickMenuBun();
-
         Assert.assertEquals("Булки", mainPage.getTextFromSelectedMenu());
     }
 
