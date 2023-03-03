@@ -20,20 +20,17 @@ public class AccountPage {
     }
 
     @Step("Нажимаем кнопку - Конструктор")
-    public MainPage clickConstructorButton() {
+    public void clickConstructorButton() {
         driver.findElement(goToConstructor).click();
-        return new MainPage(driver);
     }
 
     @Step("Нажимаем на кнопку логотипа в шапке сайта")
-    public MainPage clickOnLogo() {
+    public void clickOnLogo() {
         driver.findElement(burgerLogo).click();
-        return new MainPage(driver);
     }
 
     @Step("Нажимаем на кнопку - Выход - в личном кабинете")
-    public AuthorizationPage clickLogOutButton() {
+    public void clickLogOutButton() {
         driver.findElement(logOutButton).click();
-        return new AuthorizationPage(driver);
     }
 }
